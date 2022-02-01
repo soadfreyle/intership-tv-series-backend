@@ -4,9 +4,11 @@
     "description": "this project has the functionality to search tv series",
     "main": "build/index.js",
     "scripts": {
+        "start": "npm run build && node ./build/app.js",
+        "start:dev": "nodemon --watch src -e ts,js --exec npm start",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "tsc",
-        "dev": "ts-node-dev --respawn --transpileOnly ./src/app.ts"
+        "build:dev": "ts-node-dev --respawn --transpileOnly ./src/app.ts"
     },
     "repository": {
         "type": "git",
