@@ -1,0 +1,37 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "rules": {
+        "ordered-imports": {
+            "severity": "default"
+        },
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "trailing-comma": [
+            false
+        ],
+        "no-console": [
+            true,
+            "log"
+        ],
+        "whitespace": [
+            true,
+            "check-module"
+        ],
+        "object-literal-sort-keys": [
+            false
+        ],
+        "no-shadowed-variable": [
+            false
+        ]
+    },
+    "rulesDirectory": []
+}
