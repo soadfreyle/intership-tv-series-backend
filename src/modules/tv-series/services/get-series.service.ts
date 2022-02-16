@@ -1,21 +1,30 @@
-import { response } from "express";
-import fetch from 'node-fetch-commonjs';
+import { FetchService } from '../../core/service/request/fecth.service';
 
-export class GetSeriesService { 
+const ENDPOINT = 'https://run.mocky.io/v3/4d312654-2b59-4785-8db3-77acaeef3178';
 
-         public invoke = async () => {
+export class GetSeriesService {
 
-            const baseUrl: any = 'https://run.mocky.io/v3/4d312654-2b59-4785-8db3-77acaeef3178';
+    private readonly fetchService: FetchService;
 
+    constructor() {
+        this.fetchService = new FetchService();
+    }
+
+    public invokeSeriesService(): Promise<any> {
+        return new Promise<any>( async (resolve, reject) => {
             try {
-                const response = await fetch(baseUrl);
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                throw error;
-                
+                const response = await this.fetchService.invoke(ENDPOINT);
+                return resolve(response);
+            } catch (e) {
+                return reject(e);
             }
-        }
+        });
+    }
     
+    /*
+        Crear una nueva funcion invokeSerieService
+        el contenido no va invocar la clas FecthService, si no el AxiosService
+        
+     */
 
 }

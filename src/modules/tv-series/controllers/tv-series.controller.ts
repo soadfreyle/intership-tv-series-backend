@@ -1,6 +1,6 @@
-import { ITvSeriesController } from './i-tv-series.controller';
+import { Request, Response } from 'express';
 import {  TvSeriesManager } from '../managers/tv-series.manager';
-import { Response, Request } from 'express';
+import { ITvSeriesController } from './i-tv-series.controller';
 
 
 export class TvSeriesController implements ITvSeriesController {
@@ -12,9 +12,10 @@ export class TvSeriesController implements ITvSeriesController {
     }
 
     public async getAllTvSeries(req: Request, res: Response, next: any): Promise<any> {
-        
+        console.info('Llego al controller');
         try {
             const response = await tvSeriesController.tvSeriesManager.getTvSeries();
+            console.info('response: ', response);
             return res.status(200).json(response);
         } catch (error) {
             return res.status(500).send('Error' + error);
