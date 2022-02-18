@@ -12,10 +12,10 @@ export class TvSeriesController implements ITvSeriesController {
     }
 
     public async getAllTvSeries(req: Request, res: Response, next: any): Promise<any> {
-        console.info('Llego al controller');
+        //console.info('Llego al controller');
         try {
             const response = await tvSeriesController.tvSeriesManager.getTvSeries();
-            console.info('response: ', response);
+            //console.info('response: ', response);
             return res.status(200).json(response);
         } catch (error) {
             return res.status(500).send('Error' + error);

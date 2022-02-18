@@ -13,7 +13,7 @@ export class TvSeriesManager implements ITvSeriesManager {
         return new Promise(async (resolve, reject) => {
             try {
                 const series = await this.getSeriesService.invokeSeriesService();
-                console.info('series: ', series);
+                //console.info('series: ', series);
                 return resolve(series);
             } catch (e) {
                 return reject(e);
